@@ -1,0 +1,160 @@
+@font-face {
+  font-family: Inter;
+  src: url(../fonts/inter_regular.ttf);
+  font-size: 18px;
+  font-weight: 400px;
+}
+body {
+  background-color: #101010;
+  padding: 0px;
+  margin: 0px;
+  font-family: Inter;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  display: flex;
+  flex-direction: column;
+  cursor: none;
+}
+
+.cursor {
+  border-radius: 50%;
+  position: absolute;
+  z-index: 999;
+  transition: width 0.2s, height 0.2s, background-color 0.2s;
+  pointer-events: none;
+}
+
+.cursor.default {
+  width: 20px;
+  height: 20px;
+  background-color: #80FF80;
+}
+
+.cursor.pointer, .cursor.text {
+  width: 10px;
+  height: 10px;
+}
+
+.cursor.pointer {
+  background-color: #80FF80;
+}
+
+.cursor.text {
+  background-color: #F0F0F0;
+}
+
+nav, footer {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  position: relative;
+}
+nav .socials, footer .socials {
+  display: flex;
+  gap: 50px;
+}
+
+footer .scroll_down {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: scroll_down infinite 2s ease;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main button {
+  margin-top: 50px;
+}
+
+h1, h2, p {
+  margin: 0px;
+}
+
+h1, h2 {
+  line-height: 1;
+  color: #F0F0F0;
+}
+
+h1 {
+  font-size: 64px;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+p {
+  font-size: 24px;
+}
+
+p.text {
+  color: #909090;
+}
+
+p.title {
+  color: #F0F0F0;
+}
+
+.line {
+  flex-grow: 1;
+  height: 2px;
+  background-color: #909090;
+}
+
+button {
+  width: 200px;
+  height: 50px;
+  background-color: transparent;
+  box-sizing: border-box;
+  border: 2px solid #80FF80;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: none;
+}
+button p {
+  color: #80FF80;
+}
+
+button:hover {
+  background-color: #80FF80;
+}
+button:hover p {
+  color: #101010;
+}
+
+.icon_wrapper {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  color: #909090;
+}
+
+#text:hover {
+  color: #F0F0F0;
+}
+
+@keyframes scroll_down {
+  0% {
+    top: 50%;
+  }
+  50% {
+    top: calc(50% - 5px);
+  }
+  100% {
+    top: 50%;
+  }
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Iker Muñoz Molero - Web Dev</title>
+
+    <!--? [CSS] -->
+    <!--* Libraries -->
+    <link rel="stylesheet" href="libraries/fontawesome/fontawesome.css">
+
+    <!--* Files -->
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/hero_section.css">
+
+</head>
+<body ng-app="portfolio">
+    
+    <div class="cursor" ng-style="{ left: mouse_x, top: mouse_y }" ng-if="!is_mobile && has_moved" ng-class="mouse_type"></div>
+
+    <div class="hero_section">
+        <nav>
+            <h2>Iker Muñoz Molero</h2>
+            <div class="line"></div>
+            <p class="text" id="text">My projects</p>
+            <p class="text" id="text">What do I offer?</p>
+            <p class="text" id="text">Contact me</p>
+        </nav>
+        <main>
+            <h1>Full-stack developer</h1>
+            <p class="text">and aspiring freelancer based in Madrid, Spain.</p>
+            <p class="text">Bringing your ideas to life.</p>
+            <button id="pointer">
+                <p>Contact me</p>
+            </button>
+        </main>
+        <footer>
+            <div class="socials">
+                <div class="icon_wrapper" id="text" ng-click="redirect('https://bsky.app/profile/iker-munoz-molero.bsky.social')">
+                    <i class="fa-brands fa-bluesky"></i>
+                </div>
+                <div class="icon_wrapper" id="text" ng-click="redirect('https://github.com/iker-munoz-molero')">
+                    <i class="fa-brands fa-github"></i>
+                </div>
+            </div>
+            <div class="scroll_down">
+                <div class="icon_wrapper">
+                    <i class="fa-solid fa-down-long"></i>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+</body>
+
+    <!--? [JS] -->
+    <!--* Libraries -->
+    <script src="libraries/fontawesome/fontawesome.js"></script>
+    <script src="libraries/angular/angular.js"></script>
+
+    <!--* Files -->
+    <script src="js/app.js"></script>
+
+</html>

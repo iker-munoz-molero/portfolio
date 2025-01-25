@@ -1,0 +1,161 @@
+//? [Import globals]
+@import '_globals';
+
+@font-face {
+    font-family: Inter;
+    src: url(../fonts/inter_regular.ttf);
+    font-size: 18px;
+    font-weight: 400px;
+}
+
+body {
+
+    background-color: $background;
+    padding: 0px;
+    margin: 0px;
+    font-family: Inter;
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    cursor: none;
+
+}
+
+.cursor {
+
+    border-radius: 50%;
+    position: absolute;
+    z-index: 999;
+    transition: width 0.2s, height 0.2s, background-color 0.2s;
+    pointer-events: none;
+
+}
+
+.cursor.default {
+
+    width: 20px;
+    height: 20px;
+    background-color: $primary;
+
+}
+
+.cursor.pointer, .cursor.text {
+
+    width: 10px;
+    height: 10px;
+
+}
+
+.cursor.pointer { background-color: $primary; }
+.cursor.text { background-color: $text; }
+
+nav, footer {
+
+    width: 100%;
+    height: 40px;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    position: relative;
+
+    .socials {
+
+        display: flex;
+        gap: 50px;
+
+    }
+
+}
+
+footer .scroll_down {
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: scroll_down infinite 2s ease;
+
+} 
+
+main {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    button { margin-top: 50px; }
+
+}
+
+h1, h2, p { margin: 0px; }
+
+h1, h2 {
+
+    line-height: 1;
+    color: $text;
+
+}
+
+h1 {
+    
+    font-size: 64px;
+    text-transform: uppercase;
+
+}
+
+h2 { font-size: 32px; }
+p { font-size: 24px; }
+p.text { color: $secondary; }
+p.title { color: $text; }
+
+.line {
+
+    flex-grow: 1;
+    height: 2px;
+    background-color: $secondary;
+
+}
+
+button {
+
+    width: 200px;
+    height: 50px;
+    background-color: transparent;
+    box-sizing: border-box;
+    border: 2px solid $primary;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: none;
+
+    p { color: $primary; }
+
+}
+button:hover {
+
+    background-color: $primary;
+    p { color: $background; }
+
+}
+
+.icon_wrapper {
+
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: $secondary;
+
+}
+#text:hover { color: $text; }
+
+@keyframes scroll_down {
+    
+    0% { top: 50%; }
+    50% { top: calc(50% - 5px); }
+    100% { top: 50%; }
+
+}
