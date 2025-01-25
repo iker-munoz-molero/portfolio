@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://iker-munoz-molero.vercel.app/sitemap.xml
