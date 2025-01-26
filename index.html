@@ -12,25 +12,26 @@
     <!--* Files -->
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/hero_section.css">
+    <link rel="stylesheet" href="css/contact_section.css">
 
 </head>
 <body ng-app="portfolio">
     
     <div class="cursor" ng-style="{ left: mouse_x, top: mouse_y }" ng-if="!is_mobile && has_moved" ng-class="mouse_type"></div>
 
-    <div class="hero_section">
+    <section class="hero_section">
         <nav>
             <h2>Iker Muñoz Molero</h2>
             <div class="line"></div>
             <p class="text" id="text">My projects</p>
             <p class="text" id="text">What do I offer?</p>
-            <p class="text" id="text">Contact me</p>
+            <p class="text" id="text" ng-click="scroll_to('contact')">Contact me</p>
         </nav>
         <main>
             <h1>Full-stack developer</h1>
             <p class="text">and aspiring freelancer based in Madrid, Spain.</p>
             <p class="text">Bringing your ideas to life.</p>
-            <button id="pointer">
+            <button id="pointer" ng-click="scroll_to('contact')">
                 <p>Contact me</p>
             </button>
         </main>
@@ -49,7 +50,38 @@
                 </div>
             </div>
         </footer>
-    </div>
+    </section>
+    <section class="contact_section" id="contact">
+        <div class="contact_area">
+            <nav>
+                <h2>Contact me</h2>
+                <div class="line"></div>
+                <div class="socials">
+                    <div class="icon_wrapper" id="text" ng-click="redirect('https://bsky.app/profile/iker-munoz-molero.bsky.social')">
+                        <i class="fa-brands fa-bluesky"></i>
+                    </div>
+                    <div class="icon_wrapper" id="text" ng-click="redirect('https://github.com/iker-munoz-molero')">
+                        <i class="fa-brands fa-github"></i>
+                    </div>
+                </div>
+            </nav>
+            <form>
+                <input type="text" id="input" placeholder="Name" ng-model="user_message.name">
+                <input type="text" id="input" placeholder="Contact email" ng-model="user_message.email">
+                <textarea id="input" placeholder="Description" ng-model="user_message.description"></textarea>
+                <div class="submit_wrapper">
+                    <p class="text">{{ user_feedback }}</p>
+                    <button id="pointer" ng-click="send_message()">
+                        <p>Submit</p>
+                    </button>
+                </div>
+            </form>
+            <footer>
+                <p class="text">© {{ year }} Iker Muñoz Molero.</p>
+                <p class="text">All Rights Reserved.</p>
+            </footer>
+        </div>
+    </section>
 
 </body>
 
