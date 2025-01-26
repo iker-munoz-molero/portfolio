@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iker Muñoz Molero - Web Dev</title>
+    <meta name="description" content="Full-stack developer and aspiring freelancer based in Madrid, Spain. Bringing your ideas to life."> 
 
     <!--? [CSS] -->
     <!--* Libraries -->
@@ -12,6 +13,7 @@
     <!--* Files -->
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/hero_section.css">
+    <link rel="stylesheet" href="css/products_section.css">
     <link rel="stylesheet" href="css/contact_section.css">
 
 </head>
@@ -24,7 +26,7 @@
             <h2>Iker Muñoz Molero</h2>
             <div class="line"></div>
             <p class="text" id="text">My projects</p>
-            <p class="text" id="text">What do I offer?</p>
+            <p class="text" id="text" ng-click="scroll_to('products')">What do I offer?</p>
             <p class="text" id="text" ng-click="scroll_to('contact')">Contact me</p>
         </nav>
         <main>
@@ -44,6 +46,46 @@
                     <i class="fa-brands fa-github"></i>
                 </div>
             </div>
+            <div class="scroll_down">
+                <div class="icon_wrapper">
+                    <i class="fa-solid fa-down-long"></i>
+                </div>
+            </div>
+        </footer>
+    </section>
+    <section class="products_section" id="products">
+        <h2>What do I offer?</h2>
+        <div class="products_wrapper">
+            <div class="product_card" id="image">
+                <h2>Full website design</h2>
+                <p class="text">500€ to 2,000€</p>
+                <img src="images/web_design.webp" alt="Full website design">
+                <div class="backdrop"></div>
+            </div>
+            <div class="product_card" id="image">
+                <h2>Full website implementation</h2>
+                <p class="text">1,500€ to 5,000€</p>
+                <img src="images/web_implementation.webp" alt="Full website implementation">
+                <div class="backdrop"></div>
+            </div>
+            <div class="product_card" id="image">
+                <h2>API development</h2>
+                <p class="text">1,000€ to 4,000€</p>
+                <img src="images/api_development.webp" alt="API development">
+                <div class="backdrop"></div>
+            </div>
+            <div class="product_card" id="image">
+                <h2>SEO optimization</h2>
+                <p class="text">500€ to 1,000€</p>
+                <img src="images/seo_optimization.webp" alt="SEO optimization">
+                <div class="backdrop"></div>
+            </div>
+        </div>
+        <div class="disclaimer_wrapper">
+            <p class="text">All prices listed are approximate and subject to negotiation based on project complexity and specific requirements.</p>
+            <p class="text">Please contact for a personalized quote.</p>
+        </div>
+        <footer>
             <div class="scroll_down">
                 <div class="icon_wrapper">
                     <i class="fa-solid fa-down-long"></i>

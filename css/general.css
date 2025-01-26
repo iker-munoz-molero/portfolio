@@ -39,7 +39,7 @@ body {
   background-color: #80FF80;
 }
 
-.cursor.pointer, .cursor.text, .cursor.input {
+.cursor.pointer, .cursor.text, .cursor.input, .cursor.image {
   width: 10px;
   height: 10px;
 }
@@ -48,7 +48,7 @@ body {
   background-color: #80FF80;
 }
 
-.cursor.text, .cursor.input {
+.cursor.text, .cursor.input, .cursor.image {
   background-color: #F0F0F0;
 }
 

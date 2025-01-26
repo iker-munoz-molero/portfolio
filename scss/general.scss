@@ -46,7 +46,7 @@ body {
 
 }
 
-.cursor.pointer, .cursor.text, .cursor.input {
+.cursor.pointer, .cursor.text, .cursor.input, .cursor.image {
 
     width: 10px;
     height: 10px;
@@ -54,7 +54,7 @@ body {
 }
 
 .cursor.pointer { background-color: $primary; }
-.cursor.text, .cursor.input { background-color: $text; }
+.cursor.text, .cursor.input, .cursor.image { background-color: $text; }
 
 nav, footer {
 

@@ -97,6 +97,13 @@ app.run(function($rootScope, $http) {
 
         })
 
+        document.querySelectorAll("#image").forEach((image) => {
+
+            image.addEventListener("mouseenter", function() { $rootScope.mouse_type = "image"; })
+            image.addEventListener("mouseleave", function() { $rootScope.mouse_type = "default"; })
+
+        })
+
     }
 
 });
