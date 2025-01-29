@@ -1,0 +1,71 @@
+//? [Import globals]
+@import '_globals';
+
+.projects_section {
+
+    width: 100vw;
+    height: fit-content;
+    position: relative;
+    box-sizing: border-box;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+}
+
+.project_card {
+
+    width: fit-content;
+    max-width: 1000px;
+    height: fit-content;
+    padding: 25px;
+    box-sizing: border-box;
+    display: flex;
+    gap: 20px;
+
+    .image_container, img {
+
+        min-width: 430px;
+        height: 250px;
+
+    }
+
+}
+
+.project_card:nth-of-type(even) {
+    
+    flex-direction: row-reverse;
+    p { text-align: end; }
+
+}
+
+@media (max-width: 850px) {
+    
+    .project_card {
+        
+        flex-direction: column !important; 
+        .image_container, img { width: 430px; }
+    
+    }
+    .project_card:nth-of-type(even) { align-items: end; }
+
+}
+
+@media (max-width: 550px) {
+
+    .project_card {
+
+        .image_container, img {
+    
+            width: 300px;
+            min-width: 300px;
+            height: 175px;
+    
+        }
+
+    }
+
+}

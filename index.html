@@ -4,126 +4,113 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iker Muñoz Molero - Web Dev</title>
-    <meta name="description" content="Full-stack developer and aspiring freelancer based in Madrid, Spain. Bringing your ideas to life."> 
-
+    <meta name="description" content="Bringing your ideas to life.">
+    
     <!--? [CSS] -->
     <!--* Libraries -->
     <link rel="stylesheet" href="libraries/fontawesome/fontawesome.css">
-
+    
     <!--* Files -->
     <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/cursor.css">
     <link rel="stylesheet" href="css/hero_section.css">
+    <link rel="stylesheet" href="css/benefits_section.css">
+    <link rel="stylesheet" href="css/projects_section.css">
     <link rel="stylesheet" href="css/products_section.css">
     <link rel="stylesheet" href="css/contact_section.css">
 
 </head>
 <body ng-app="portfolio">
     
-    <div class="cursor" ng-style="{ left: mouse_x, top: mouse_y }" ng-if="!is_mobile && has_moved" ng-class="mouse_type"></div>
-
-    <section class="hero_section">
+    <div class="cursor" ng-style="{ left: mouse_x, top: mouse_y }" ng-if="!is_mobile && has_moved" ng-class="cursor"></div>
+    <main class="hero_section">
         <nav>
-            <h2>Iker Muñoz Molero</h2>
-            <div class="line"></div>
-            <p class="text" id="text">My projects</p>
-            <p class="text" id="text" ng-click="scroll_to('products')">What do I offer?</p>
-            <p class="text" id="text" ng-click="scroll_to('contact')">Contact me</p>
+            <h3>Iker Muñoz Molero</h3>
+            <h4 id="hover" ng-click="scroll_to('benefits_section')">Why choose me?</h4>
+            <h4 id="hover" ng-click="scroll_to('projects_section')">My projects</h4>
+            <h4 id="hover" ng-click="scroll_to('products_section')">What do I offer?</h4>
+            <h4 id="hover" ng-click="scroll_to('contact_section')">Get in touch</h4>
         </nav>
-        <main>
-            <h1>Full-stack developer</h1>
-            <p class="text">and aspiring freelancer based in Madrid, Spain.</p>
-            <p class="text">Bringing your ideas to life.</p>
-            <button id="pointer" ng-click="scroll_to('contact')">
-                <p>Contact me</p>
-            </button>
-        </main>
-        <footer>
-            <div class="socials">
-                <div class="icon_wrapper" id="text" ng-click="redirect('https://bsky.app/profile/iker-munoz-molero.bsky.social')">
-                    <i class="fa-brands fa-bluesky"></i>
-                </div>
-                <div class="icon_wrapper" id="text" ng-click="redirect('https://github.com/iker-munoz-molero')">
-                    <i class="fa-brands fa-github"></i>
-                </div>
+        <div class="info_wrapper">
+            <h1>Bringing your ideas to life</h1>
+            <p>I’m a full-stack developer passionate about turning ideas into seamless, functional, and beautifully crafted websites. Based in Madrid, Spain.</p>
+            <button id="button">Make it happen</button>
+        </div>
+        <div class="socials">
+            <div class="icon_wrapper" id="hover" ng-click="redirect('https://bsky.app/profile/iker-munoz-molero.bsky.social')">
+                <i class="fa-brands fa-bluesky"></i>
             </div>
-            <div class="scroll_down">
+            <div class="icon_wrapper" id="hover" ng-click="redirect('https://github.com/iker-munoz-molero')">
+                <i class="fa-brands fa-github"></i>
+            </div>
+        </div>
+        <img src="./images/background.webp" alt="galaxy_sky" class="background_image">
+        <div class="background_gradient"></div>
+    </main>
+    <section class="benefits_section" id="benefits_section">
+        <h2>Why choose me?</h2>
+        <div class="benefit_card" ng-repeat="benefit in benefits">
+            <div class="header_wrapper">
                 <div class="icon_wrapper">
-                    <i class="fa-solid fa-down-long"></i>
+                    <i class="fa-solid" ng-class="benefit.icon"></i>
+                </div>
+                <h3>{{ benefit.title }}</h3>
+            </div>
+            <p>{{ benefit.description }}</p>
+        </div>
+    </section>
+    <section class="projects_section" id="projects_section">
+        <h2>My projects</h2>
+        <div class="project_card" id="hover" ng-repeat="project in projects">
+            <div class="image_container">
+                <img src="{{ project.image }}" alt="website_landing_page">
+                <div class="backdrop">
+                    <h3>{{ project.name }}</h3>
                 </div>
             </div>
-        </footer>
+            <p>{{ project.description }}</p>
+        </div>
     </section>
-    <section class="products_section" id="products">
+    <section class="products_section" id="products_section">
         <h2>What do I offer?</h2>
         <div class="products_wrapper">
-            <div class="product_card" id="image">
-                <h2>Full website design</h2>
-                <p class="text">500€ to 2,000€</p>
-                <img src="images/web_design.webp" alt="Full website design">
-                <div class="backdrop"></div>
-            </div>
-            <div class="product_card" id="image">
-                <h2>Full website implementation</h2>
-                <p class="text">1,500€ to 5,000€</p>
-                <img src="images/web_implementation.webp" alt="Full website implementation">
-                <div class="backdrop"></div>
-            </div>
-            <div class="product_card" id="image">
-                <h2>API development</h2>
-                <p class="text">1,000€ to 4,000€</p>
-                <img src="images/api_development.webp" alt="API development">
-                <div class="backdrop"></div>
-            </div>
-            <div class="product_card" id="image">
-                <h2>SEO optimization</h2>
-                <p class="text">500€ to 1,000€</p>
-                <img src="images/seo_optimization.webp" alt="SEO optimization">
-                <div class="backdrop"></div>
-            </div>
-        </div>
-        <div class="disclaimer_wrapper">
-            <p class="text">All prices listed are approximate and subject to negotiation based on project complexity and specific requirements.</p>
-            <p class="text">Please contact for a personalized quote.</p>
-        </div>
-        <footer>
-            <div class="scroll_down">
-                <div class="icon_wrapper">
-                    <i class="fa-solid fa-down-long"></i>
+            <div class="image_container" id="hover" ng-repeat="product in products">
+                <img src="{{ product.image }}" alt="product_image">
+                <div class="backdrop">
+                    <h3>{{ product.name }}</h3>
+                    <p>{{ product.price }}</p>
                 </div>
             </div>
-        </footer>
+        </div>
+        <i>*All prices listed are approximate and subject to negotiation based on project complexity and specific requirements. Please contact for a personalized quote.</i>
     </section>
-    <section class="contact_section" id="contact">
-        <div class="contact_area">
-            <nav>
-                <h2>Contact me</h2>
-                <div class="line"></div>
-                <div class="socials">
-                    <div class="icon_wrapper" id="text" ng-click="redirect('https://bsky.app/profile/iker-munoz-molero.bsky.social')">
-                        <i class="fa-brands fa-bluesky"></i>
-                    </div>
-                    <div class="icon_wrapper" id="text" ng-click="redirect('https://github.com/iker-munoz-molero')">
-                        <i class="fa-brands fa-github"></i>
-                    </div>
-                </div>
-            </nav>
-            <form>
-                <input type="text" id="input" placeholder="Name" ng-model="user_message.name">
-                <input type="text" id="input" placeholder="Contact email" ng-model="user_message.email">
-                <textarea id="input" placeholder="Description" ng-model="user_message.description"></textarea>
-                <div class="submit_wrapper">
-                    <p class="text">{{ user_feedback }}</p>
-                    <button id="pointer" ng-click="send_message()">
-                        <p>Submit</p>
-                    </button>
-                </div>
-            </form>
-            <footer>
-                <p class="text">© {{ year }} Iker Muñoz Molero.</p>
-                <p class="text">All Rights Reserved.</p>
-            </footer>
-        </div>
+    <section class="contact_section" id="contact_section">
+        <h2>Get in touch</h2>
+        <form>
+            <div class="input_wrapper">
+                <input placeholder="Full name" id="hover" ng-model="name_value">
+                <i>{{ name_error }}</i>
+            </div>
+            <div class="input_wrapper">
+                <input placeholder="Contact email" id="hover" ng-model="mail_value">
+                <i>{{ mail_error }}</i>
+            </div>
+            <div class="input_wrapper">
+                <textarea placeholder="Tell me your great idea!" id="hover" ng-model="description_value">
+                </textarea>
+                <i>{{ description_error }}</i>
+            </div>
+            <div class="input_wrapper">
+                <button id="button" ng-click="validate_data()">Submit</button>
+                <i>{{ status_feedback }}</i>
+            </div>
+
+        </form>
     </section>
+    <footer>
+        <i>&copy; {{ year }}  Iker Muñoz Molero</i>
+        <i>All rights reserved.</i>
+    </footer>
 
 </body>
 
@@ -134,5 +121,8 @@
 
     <!--* Files -->
     <script src="js/app.js"></script>
+    <script src="js/data/benefits.js"></script>
+    <script src="js/data/projects.js"></script>
+    <script src="js/data/products.js"></script>
 
 </html>

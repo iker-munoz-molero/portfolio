@@ -1,0 +1,30 @@
+//? [Import globals]
+@import '_globals';
+
+.cursor {
+
+    width: 20px;
+    height: 20px;
+    background-color: $text;
+    transition: width 0.2s, height 0.2s;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    pointer-events: none;
+    border-radius: 50%;
+
+}
+
+.cursor.button {
+
+    width: 0px;
+    height: 0px;
+
+}
+
+.cursor.hover {
+
+    width: 10px;
+    height: 10px;
+
+}

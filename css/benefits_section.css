@@ -1,4 +1,4 @@
-.products_section {
+.benefits_section {
   width: 100vw;
   height: -moz-fit-content;
   height: fit-content;
@@ -12,17 +12,23 @@
   gap: 20px;
 }
 
-.products_wrapper {
+.benefit_card {
   width: 100%;
   max-width: 1000px;
   height: -moz-fit-content;
   height: fit-content;
+  padding: 25px 0px;
+  box-sizing: border-box;
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 10px;
+}
+.benefit_card .header_wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
   gap: 20px;
 }
-.products_wrapper .image_container, .products_wrapper img {
-  min-width: 300px;
-  height: 250px;
+.benefit_card .header_wrapper .icon_wrapper {
+  color: #F0F0F0;
 }

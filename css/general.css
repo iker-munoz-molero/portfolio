@@ -1,9 +1,7 @@
-@font-face {
-  font-family: Inter;
-  src: url(../fonts/inter_regular.ttf);
-  font-size: 18px;
-  font-weight: 400px;
+* {
+  cursor: none;
 }
+
 html {
   scrollbar-width: none;
 }
@@ -13,182 +11,152 @@ html::-webkit-scrollbar {
 }
 
 body {
-  background-color: #101010;
+  font-family: "Arial";
+  background-color: #000000;
   padding: 0px;
   margin: 0px;
-  font-family: Inter;
+  display: flex;
+  flex-direction: column;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-  display: flex;
-  flex-direction: column;
-  cursor: none;
 }
 
-.cursor {
-  border-radius: 50%;
-  position: absolute;
-  z-index: 999;
-  transition: width 0.2s, height 0.2s, top 0.05s, left 0.05s, background-color 0.2s;
-  pointer-events: none;
-}
-
-.cursor.default {
-  width: 20px;
-  height: 20px;
-  background-color: #80FF80;
-}
-
-.cursor.pointer, .cursor.text, .cursor.input, .cursor.image {
-  width: 10px;
-  height: 10px;
-}
-
-.cursor.pointer {
-  background-color: #80FF80;
-}
-
-.cursor.text, .cursor.input, .cursor.image {
-  background-color: #F0F0F0;
-}
-
-nav, footer {
-  width: 100%;
-  height: 40px;
-  display: flex;
-  gap: 50px;
-  align-items: center;
-  position: relative;
-}
-nav .socials, footer .socials {
-  display: flex;
-  gap: 50px;
-}
-
-footer .scroll_down {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  animation: scroll_down infinite 2s ease;
-}
-
-h1, h2, p {
+h1, h2, h3, h4 {
+  color: #F0F0F0;
   margin: 0px;
 }
 
-h1, h2 {
-  line-height: 1;
-  color: #F0F0F0;
+p, i {
+  color: #909090;
+  margin: 0px;
 }
 
 h1 {
   font-size: 64px;
+  font-weight: 700;
   text-transform: uppercase;
 }
 
 h2 {
-  font-size: 32px;
+  font-size: 30px;
+  font-weight: 600;
 }
 
-p {
+h3 {
   font-size: 24px;
+  font-weight: 600;
 }
 
-p.text {
+h4, p {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+i {
+  font-size: 14px;
+}
+
+h4 {
   color: #909090;
 }
 
-p.title {
+h4:hover {
   color: #F0F0F0;
 }
 
-.line {
-  flex-grow: 1;
-  height: 2px;
-  background-color: #909090;
-}
-
-button {
-  width: 200px;
-  height: 50px;
-  background-color: transparent;
-  box-sizing: border-box;
-  border: 2px solid #80FF80;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: none;
-}
-button p {
-  color: #80FF80;
-}
-
-button:hover {
-  background-color: #80FF80;
-}
-button:hover p {
-  color: #101010;
+h1 {
+  text-shadow: 5px 5px 5px #000000;
 }
 
 .icon_wrapper {
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 30px;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-size: 25px;
   color: #909090;
 }
 
-#text:hover {
+.icon_wrapper:hover {
   color: #F0F0F0;
 }
 
-@keyframes scroll_down {
-  0% {
-    top: 50%;
-  }
-  50% {
-    top: calc(50% - 5px);
-  }
-  100% {
-    top: 50%;
-  }
+button {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 50px;
+  padding: 0px 40px;
+  background-color: transparent;
+  border: 2px solid #F0F0F0;
+  box-sizing: border-box;
+  border-radius: 10px;
+  filter: drop-shadow(5px 5px 5px #000000);
+  color: #F0F0F0;
+  text-transform: uppercase;
+  font-size: 18px;
 }
+
+button:hover {
+  background-color: #F0F0F0;
+  color: #000000;
+}
+
+.image_container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.image_container img {
+  background-color: #101010;
+  transition: scale 1s;
+}
+.image_container .backdrop {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  position: absolute;
+  background: linear-gradient(0deg, rgb(0, 0, 0) 10%, rgba(0, 0, 0, 0) 100%);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: end;
+}
+
+.image_container:hover img {
+  scale: 1.2;
+}
+
+footer {
+  padding: 25px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+
 @media (max-width: 1100px) {
-  #text {
-    display: none;
-  }
   h1 {
     font-size: 48px;
+  }
+}
+@media (max-width: 600px) {
+  h1 {
+    font-size: 40px;
   }
   h2 {
     font-size: 24px;
   }
-  p {
+  h3 {
     font-size: 20px;
   }
-  button {
-    width: 160px;
-    height: 40px;
+  h4, p {
+    font-size: 16px;
   }
-  .icon_wrapper {
-    font-size: 20px;
-  }
-}
-@media (max-width: 700px) {
-  h1 {
-    font-size: 1.6rem;
-  }
-  h2 {
-    font-size: 1rem;
-  }
-  p {
-    font-size: 0.8rem;
-  }
-  button {
-    width: 100px;
+  i {
+    font-size: 12px;
   }
 }
