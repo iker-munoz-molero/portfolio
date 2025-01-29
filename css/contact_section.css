@@ -59,7 +59,7 @@ form {
   padding: 0px 10px;
   box-sizing: border-box;
   resize: none;
-  font-family: Inter;
+  font-family: "Arial";
 }
 .input_wrapper textarea:focus {
   outline: none;
